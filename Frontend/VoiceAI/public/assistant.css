@@ -1,0 +1,840 @@
+.shifra-voice-ai-root {
+    position: fixed;
+    z-index: 2147483647;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    pointer-events: none;
+}
+
+.shifra-voice-ai-root,
+.shifra-voice-ai-root * {
+    box-sizing: border-box;
+}
+
+.shifra-voice-ai-root.shifra-position-bottom-right {
+    right: 24px;
+    bottom: 24px;
+}
+
+.shifra-voice-ai-root.shifra-position-bottom-left {
+    left: 24px;
+    bottom: 24px;
+}
+
+.shifra-voice-ai-root.shifra-position-top-right {
+    right: 24px;
+    top: 24px;
+}
+
+.shifra-voice-ai-root.shifra-position-top-left {
+    left: 24px;
+    top: 24px;
+}
+
+.shifra-voice-ai-root.shifra-theme-dark {
+    color: #ffffff;
+}
+
+.shifra-voice-ai-root.shifra-theme-light {
+    color: #0f172a;
+}
+
+.shifra-voice-ai-root[data-listening="true"] .shifra-voice-ai-orb-glow {
+    animation-duration: 1.4s;
+    opacity: 1;
+}
+
+.shifra-voice-ai-root[data-listening="true"] .shifra-voice-ai-orb {
+    animation-duration: 1.2s;
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.16) inset,
+        0 18px 42px rgba(2, 6, 23, 0.42),
+        0 0 60px rgba(34, 211, 238, 0.5);
+}
+
+.shifra-voice-ai-root[data-listening="true"] .shifra-voice-ai-status-dot {
+    background: #22d3ee;
+    box-shadow: 0 0 0 10px rgba(34, 211, 238, 0.12);
+}
+
+.shifra-voice-ai-root[data-listening="true"] .shifra-voice-ai-mic {
+    transform: translateY(-1px) scale(1.06);
+    box-shadow:
+        0 22px 44px rgba(34, 211, 238, 0.28),
+        0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+}
+
+.shifra-voice-ai-root[data-listening="true"] .shifra-voice-ai-mic-icon {
+    animation: shifra-mic-breathe 1s ease-in-out infinite;
+}
+
+.shifra-theme-light .shifra-voice-ai-panel {
+    background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(59, 130, 246, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.96));
+    color: #0f172a;
+    border-color: rgba(148, 163, 184, 0.2);
+    box-shadow: 0 28px 72px rgba(15, 23, 42, 0.14);
+}
+
+.shifra-theme-light .shifra-voice-ai-panel-inner::before {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), transparent 24%);
+}
+
+.shifra-theme-light .shifra-voice-ai-hero {
+    background:
+        radial-gradient(circle at top, rgba(14, 165, 233, 0.12), transparent 34%),
+        radial-gradient(circle at bottom, rgba(59, 130, 246, 0.08), transparent 36%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 245, 249, 0.92));
+    border-color: rgba(148, 163, 184, 0.18);
+}
+
+.shifra-theme-light .shifra-voice-ai-orb-glow {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.22), rgba(59, 130, 246, 0.04) 68%);
+}
+
+.shifra-theme-light .shifra-voice-ai-orb {
+    background:
+        radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.82), transparent 22%),
+        radial-gradient(circle at 65% 70%, rgba(15, 23, 42, 0.06), transparent 22%),
+        linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(224, 242, 254, 0.98) 55%, rgba(191, 219, 254, 0.96));
+    box-shadow:
+        0 0 0 1px rgba(148, 163, 184, 0.18) inset,
+        0 14px 34px rgba(15, 23, 42, 0.12),
+        0 0 44px rgba(59, 130, 246, 0.18);
+}
+
+.shifra-theme-light .shifra-voice-ai-orb::before {
+    border-color: rgba(15, 23, 42, 0.14);
+}
+
+.shifra-theme-light .shifra-voice-ai-orb::after {
+    border-color: rgba(15, 23, 42, 0.08);
+}
+
+.shifra-theme-light .shifra-wave span,
+.shifra-theme-light .shifra-voice-ai-wave span {
+    background: linear-gradient(180deg, rgba(14, 165, 233, 0.96), rgba(59, 130, 246, 0.18));
+    box-shadow: 0 0 14px rgba(59, 130, 246, 0.12);
+}
+
+.shifra-theme-light .shifra-voice-ai-card {
+    background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.06), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.94));
+    border-color: rgba(148, 163, 184, 0.16);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.shifra-theme-light .shifra-voice-ai-user-message {
+    background:
+        linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(59, 130, 246, 0.08)),
+        rgba(255, 255, 255, 0.92);
+    color: #0f172a;
+    border-color: rgba(59, 130, 246, 0.16);
+}
+
+.shifra-theme-light .shifra-voice-ai-body-meta {
+    color: rgba(15, 23, 42, 0.58);
+}
+
+.shifra-theme-light .shifra-voice-ai-input {
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(148, 163, 184, 0.28);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+}
+
+.shifra-theme-light .shifra-voice-ai-input::placeholder {
+    color: rgba(100, 116, 139, 0.95);
+}
+
+.shifra-theme-light .shifra-voice-ai-input:focus {
+    border-color: rgba(59, 130, 246, 0.48);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.shifra-theme-light .shifra-voice-ai-send {
+    background: linear-gradient(135deg, #e2f2ff 0%, #ffffff 100%);
+    color: #0f172a;
+    border: 1px solid rgba(59, 130, 246, 0.18);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
+.shifra-theme-light .shifra-voice-ai-send:hover {
+    box-shadow: 0 16px 28px rgba(15, 23, 42, 0.12);
+}
+
+.shifra-theme-light .shifra-voice-ai-mic {
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.88), transparent 35%), linear-gradient(135deg, rgba(14, 165, 233, 0.9), rgba(59, 130, 246, 0.94));
+    box-shadow:
+        0 18px 36px rgba(59, 130, 246, 0.16),
+        0 0 0 1px rgba(255, 255, 255, 0.88) inset;
+}
+
+.shifra-theme-light .shifra-voice-ai-mic-icon {
+    filter: none;
+}
+
+.shifra-theme-light .shifra-voice-ai-footer-copy {
+    color: rgba(15, 23, 42, 0.66);
+}
+    .shifra-voice-ai-listening-bubble {
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        border: 1px dashed rgba(34, 211, 238, 0.42);
+        background: rgba(34, 211, 238, 0.1);
+    }
+    .shifra-voice-ai-listening-label {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(103, 232, 249, 0.92);
+    }
+    .shifra-voice-ai-listening-text {
+        margin-top: 6px;
+        font-size: 13px;
+        line-height: 1.5;
+        color: #e0f2fe;
+        min-height: 20px;
+    }
+    .shifra-theme-light .shifra-voice-ai-listening-bubble {
+        border-color: rgba(14, 165, 233, 0.42);
+        background: rgba(14, 165, 233, 0.08);
+    }
+    .shifra-theme-light .shifra-voice-ai-listening-label {
+        color: rgba(3, 105, 161, 0.86);
+    }
+    .shifra-theme-light .shifra-voice-ai-listening-text {
+        color: #0f172a;
+    }
+
+.shifra-theme-light .shifra-voice-ai-trigger {
+    background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 28%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(241, 245, 249, 0.96) 100%);
+    color: #0f172a;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.12);
+}
+
+.shifra-theme-light .shifra-voice-ai-trigger-dot {
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.08);
+}
+
+.shifra-voice-ai-trigger {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    border: 0;
+    border-radius: 999px;
+    padding: 14px 18px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: inherit;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.24);
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.shifra-voice-ai-brand {
+    width: 22px;
+    height: 22px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex: 0 0 22px;
+}
+
+.shifra-voice-ai-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.shifra-theme-dark .shifra-voice-ai-brand {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.shifra-theme-light .shifra-voice-ai-brand {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.12) inset;
+}
+
+.shifra-theme-dark .shifra-voice-ai-trigger {
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 32%), linear-gradient(135deg, rgba(34, 211, 238, 0.96) 0%, rgba(56, 189, 248, 0.92) 52%, rgba(14, 165, 233, 0.98) 100%);
+    color: #020617;
+}
+
+.shifra-theme-light .shifra-voice-ai-trigger {
+    background: linear-gradient(135deg, #e2e8f0 0%, #f8fafc 100%);
+    color: #0f172a;
+}
+
+.shifra-voice-ai-trigger:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 22px 48px rgba(15, 23, 42, 0.34);
+}
+
+.shifra-voice-ai-trigger-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: currentColor;
+    opacity: 0.85;
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.16);
+}
+
+.shifra-voice-ai-panel {
+    pointer-events: auto;
+    display: none;
+    width: min(460px, calc(100vw - 32px));
+    margin-top: 12px;
+    border-radius: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    backdrop-filter: blur(24px);
+    box-shadow: 0 34px 84px rgba(2, 6, 23, 0.52);
+    transform-origin: bottom right;
+    animation: shifra-pop-in 180ms ease-out;
+}
+
+#shifra-voice-ai-root.is-open .shifra-voice-ai-panel {
+    display: block;
+}
+
+.shifra-theme-dark .shifra-voice-ai-panel {
+    background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(168, 85, 247, 0.12), transparent 26%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.99), rgba(2, 6, 23, 0.97));
+    color: #ffffff;
+}
+
+.shifra-theme-light .shifra-voice-ai-panel {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.92));
+    color: #0f172a;
+}
+
+.shifra-voice-ai-panel-inner {
+    padding: 18px;
+    position: relative;
+}
+
+.shifra-theme-dark .shifra-voice-ai-panel-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 24%);
+    pointer-events: none;
+}
+
+.shifra-theme-dark .shifra-voice-ai-panel-inner > * {
+    position: relative;
+    z-index: 1;
+}
+
+.shifra-voice-ai-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.shifra-voice-ai-kicker {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.78;
+    color: rgba(226, 232, 240, 0.82);
+}
+
+.shifra-theme-light .shifra-voice-ai-kicker {
+    color: rgba(15, 23, 42, 0.72);
+}
+
+.shifra-voice-ai-title {
+    margin: 6px 0 0;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: inherit;
+}
+
+.shifra-voice-ai-close {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    background: rgba(148, 163, 184, 0.16);
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.shifra-voice-ai-close:hover {
+    background: rgba(148, 163, 184, 0.24);
+    transform: scale(1.03);
+}
+
+.shifra-voice-ai-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 190px;
+    padding: 20px 18px 18px;
+    border-radius: 28px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background:
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.18), transparent 34%),
+        radial-gradient(circle at bottom, rgba(168, 85, 247, 0.1), transparent 36%),
+        rgba(15, 23, 42, 0.38);
+    overflow: hidden;
+}
+
+.shifra-theme-light .shifra-voice-ai-hero {
+    background:
+        radial-gradient(circle at top, rgba(34, 211, 238, 0.12), transparent 34%),
+        rgba(255, 255, 255, 0.7);
+}
+
+.shifra-voice-ai-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 30%);
+    pointer-events: none;
+}
+
+.shifra-voice-ai-orb-wrap {
+    position: relative;
+    width: 122px;
+    height: 122px;
+    display: grid;
+    place-items: center;
+}
+
+.shifra-voice-ai-orb-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    filter: blur(34px);
+    transform: scale(1.35);
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.42), rgba(34, 211, 238, 0.02) 68%);
+    animation: shifra-glow 3.4s ease-in-out infinite;
+}
+
+.shifra-voice-ai-orb {
+    position: relative;
+    width: 112px;
+    height: 112px;
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.58), transparent 24%),
+        radial-gradient(circle at 65% 70%, rgba(255, 255, 255, 0.08), transparent 22%),
+        linear-gradient(145deg, rgba(34, 211, 238, 0.96), rgba(59, 130, 246, 0.92) 58%, rgba(14, 165, 233, 0.98));
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+        0 14px 34px rgba(2, 6, 23, 0.34),
+        0 0 44px rgba(34, 211, 238, 0.34);
+    animation: shifra-orb 2.8s ease-in-out infinite;
+}
+
+.shifra-voice-ai-orb::before,
+.shifra-voice-ai-orb::after {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border-radius: inherit;
+}
+
+.shifra-voice-ai-orb::before {
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    transform: rotate(14deg);
+    opacity: 0.86;
+}
+
+.shifra-voice-ai-orb::after {
+    inset: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    opacity: 0.72;
+}
+
+.shifra-voice-ai-status-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.34);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.shifra-theme-light .shifra-voice-ai-status-row {
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.shifra-voice-ai-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #22c55e;
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.14);
+    animation: shifra-pulse-dot 1.6s ease-in-out infinite;
+}
+
+.shifra-voice-ai-status-text {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.shifra-voice-ai-hero-copy {
+    max-width: 300px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(226, 232, 240, 0.86);
+}
+
+.shifra-theme-light .shifra-voice-ai-hero-copy {
+    color: rgba(15, 23, 42, 0.74);
+}
+
+.shifra-wave,
+.shifra-voice-ai-wave {
+    margin: 14px 0 4px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px;
+    height: 44px;
+    opacity: 0.42;
+    transition: opacity 180ms ease;
+}
+
+.shifra-wave span,
+.shifra-voice-ai-wave span {
+    width: 8px;
+    border-radius: 999px;
+    transform-origin: bottom;
+    animation: shifra-wave 1.15s ease-in-out infinite;
+    animation-play-state: paused;
+    background: linear-gradient(180deg, rgba(103, 232, 249, 0.98), rgba(34, 211, 238, 0.2));
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.16);
+}
+
+.shifra-voice-ai-root[data-user-speaking="true"] .shifra-wave,
+.shifra-voice-ai-root[data-user-speaking="true"] .shifra-voice-ai-wave {
+    opacity: 1;
+}
+
+.shifra-voice-ai-root[data-user-speaking="true"] .shifra-wave span,
+.shifra-voice-ai-root[data-user-speaking="true"] .shifra-voice-ai-wave span {
+    animation-play-state: running;
+}
+
+.shifra-wave span:nth-child(1),
+.shifra-voice-ai-wave span:nth-child(1) { height: 14px; animation-delay: 0ms; }
+.shifra-wave span:nth-child(2),
+.shifra-voice-ai-wave span:nth-child(2) { height: 26px; animation-delay: 80ms; }
+.shifra-wave span:nth-child(3),
+.shifra-voice-ai-wave span:nth-child(3) { height: 18px; animation-delay: 160ms; }
+.shifra-wave span:nth-child(4),
+.shifra-voice-ai-wave span:nth-child(4) { height: 34px; animation-delay: 240ms; }
+.shifra-wave span:nth-child(5),
+.shifra-voice-ai-wave span:nth-child(5) { height: 22px; animation-delay: 320ms; }
+.shifra-wave span:nth-child(6),
+.shifra-voice-ai-wave span:nth-child(6) { height: 30px; animation-delay: 400ms; }
+
+.shifra-voice-ai-card {
+    margin-top: 14px;
+    border-radius: 24px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.09), transparent 34%),
+        linear-gradient(180deg, rgba(15, 23, 42, 0.72), rgba(2, 6, 23, 0.56));
+    padding: 18px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.shifra-theme-light .shifra-voice-ai-card {
+    background: rgba(255, 255, 255, 0.76);
+}
+
+.shifra-voice-ai-body {
+    min-height: 210px;
+}
+
+.shifra-voice-ai-body-title {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.shifra-theme-light .shifra-voice-ai-body-title {
+    color: #0f172a;
+}
+
+.shifra-voice-ai-body-copy {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.92;
+    color: rgba(226, 232, 240, 0.84);
+}
+
+.shifra-theme-light .shifra-voice-ai-body-copy {
+    color: rgba(15, 23, 42, 0.74);
+}
+
+.shifra-voice-ai-body-meta {
+    margin-top: 12px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    opacity: 0.78;
+    color: rgba(148, 163, 184, 0.92);
+}
+
+.shifra-voice-ai-user-message {
+    padding: 12px 14px;
+    margin: 12px 0;
+    border-radius: 16px;
+    background:
+        linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(59, 130, 246, 0.16)),
+        rgba(15, 23, 42, 0.38);
+    border: 1px solid rgba(34, 211, 238, 0.22);
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0f2fe;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.shifra-voice-ai-actions {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.shifra-voice-ai-input {
+    width: 100%;
+    min-width: 0;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    padding: 12px 14px;
+    font: inherit;
+    color: inherit;
+    background: rgba(2, 6, 23, 0.22);
+    outline: none;
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.shifra-theme-light .shifra-voice-ai-input {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.shifra-voice-ai-input::placeholder {
+    color: rgba(148, 163, 184, 0.9);
+}
+
+.shifra-voice-ai-input:focus {
+    border-color: rgba(34, 211, 238, 0.6);
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.14);
+    background: rgba(2, 6, 23, 0.34);
+}
+
+.shifra-theme-light .shifra-voice-ai-input:focus {
+    background: rgba(255, 255, 255, 1);
+}
+
+.shifra-voice-ai-send {
+    border: 0;
+    border-radius: 16px;
+    padding: 12px 16px;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    background: linear-gradient(135deg, #22d3ee 0%, #38bdf8 100%);
+    color: #020617;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    box-shadow: 0 14px 28px rgba(34, 211, 238, 0.25);
+}
+
+.shifra-voice-ai-send:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 32px rgba(34, 211, 238, 0.3);
+}
+
+.shifra-voice-ai-footer {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.shifra-voice-ai-mic {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 64px;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.16), transparent 35%), linear-gradient(135deg, rgba(34, 211, 238, 0.96), rgba(59, 130, 246, 0.92));
+    box-shadow:
+        0 18px 36px rgba(34, 211, 238, 0.18),
+        0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    animation: shifra-mic-float 2.6s ease-in-out infinite;
+}
+
+.shifra-voice-ai-mic:hover {
+    transform: translateY(-1px) scale(1.03);
+    box-shadow:
+        0 22px 44px rgba(34, 211, 238, 0.22),
+        0 0 0 1px rgba(255, 255, 255, 0.16) inset;
+}
+
+.shifra-voice-ai-mic-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.shifra-voice-ai-footer-copy {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(226, 232, 240, 0.78);
+}
+
+.shifra-theme-light .shifra-voice-ai-footer-copy {
+    color: rgba(15, 23, 42, 0.72);
+}
+
+@keyframes shifra-pop-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes shifra-orb {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.045);
+    }
+}
+
+@keyframes shifra-glow {
+    0%, 100% {
+        opacity: 0.55;
+        transform: scale(1.28);
+    }
+
+    50% {
+        opacity: 0.82;
+        transform: scale(1.38);
+    }
+}
+
+@keyframes shifra-wave {
+    0%, 100% {
+        transform: scaleY(0.72);
+        opacity: 0.52;
+    }
+
+    50% {
+        transform: scaleY(1.22);
+        opacity: 1;
+    }
+}
+
+@keyframes shifra-pulse-dot {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.14);
+    }
+
+    50% {
+        transform: scale(1.14);
+        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0.08);
+    }
+}
+
+@keyframes shifra-mic-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes shifra-mic-breathe {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@media (max-width: 640px) {
+    .shifra-voice-ai-root {
+        right: 16px;
+        left: 16px;
+        bottom: 16px;
+        top: auto;
+    }
+
+    .shifra-voice-ai-root.shifra-position-top-right,
+    .shifra-voice-ai-root.shifra-position-top-left {
+        top: 16px;
+        bottom: auto;
+    }
+
+    .shifra-voice-ai-panel {
+        width: 100%;
+    }
+
+    .shifra-voice-ai-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .shifra-voice-ai-footer {
+        align-items: flex-start;
+    }
+}
